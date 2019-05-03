@@ -1,6 +1,6 @@
 ---
 id: react-api
-title: React Top-Level API
+title: React API רמה-עליונה 
 layout: docs
 category: Reference
 permalink: docs/react-api.html
@@ -13,35 +13,35 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` is the entry point to the React library. If you load React from a `<script>` tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+`React` היא נקודת הכניסה לספריית React. אם אתה טוען את React מתגית ה-`<script>`, ה-API ברמה-עליונה זמין ב-React הגלובאלי. אם אתה משתמש ב-ES6 עם npm, אתה יכול לכתוב `import React from 'react'`. אם אתה משתמש ב-ES5 עם npm, אתה יכול לכתוב `var React  = require('react')`.
 
-## Overview {#overview}
+## סקירה כללית {#overview}
 
-### Components {#components}
+### קומפוננטות {#components}
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
+קומפוננטות React נותנות לך לפצל את הממשק משתמש לחתיכות עצמאיות לשימוש חוזר, ולחשוב על כל אחת בנפרד. ניתן להגדיר קומפוננטות React על ידי הרחבת `React.Component` או `React.PureComponent`.
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-If you don't use ES6 classes, you may use the `create-react-class` module instead. See [Using React without ES6](/docs/react-without-es6.html) for more information.
+אם אתה לא משתמש במחלקות ES6, אתה רשאי להשתמש במודול `create-react-class` במקום. למידע נוסף ראה [שימוש ב-React ללא ES6](/docs/react-without-es6.html).
 
-React components can also be defined as functions which can be wrapped:
+קומפוננטות React ניתנות גם להגדרה כפונקציות אשר יכולות להתעטף:
 
 - [`React.memo`](#reactmemo)
 
-### Creating React Elements {#creating-react-elements}
+### יצירת אלמנטים של React {#creating-react-elements}
 
-We recommend [using JSX](/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
+אנו ממליצים [להשתמש ב-JSX](/docs/introducing-jsx.html) כדי לתאר איך ממשק המשתמש שלך צריך להראות. כל אלמנט JSX הוא רק סוכר תחבירי לקריאת [`React.createElement()`](#createelement). בדרך כלל אתה לא תקרא למתודות הבאות באופן ישיר אם אתה לא משתמש ב-JSX.
 
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
-See [Using React without JSX](/docs/react-without-jsx.html) for more information.
+למידע נוסף ראה [שימוש ב-React ללא ES6](/docs/react-without-es6.html).
 
-### Transforming Elements {#transforming-elements}
+### שינוי אלמנטים {#transforming-elements}
 
-`React` provides several APIs for manipulating elements:
+`React` מספק מספר של API לתפעל אלמנטים.
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
@@ -49,7 +49,7 @@ See [Using React without JSX](/docs/react-without-jsx.html) for more information
 
 ### Fragments {#fragments}
 
-`React` also provides a component for rendering multiple elements without a wrapper.
+`React` גם מספק קומפוננטה לרינדור מרובה של אלמנטים בלי מעטפת.
 
 - [`React.Fragment`](#reactfragment)
 
@@ -60,20 +60,20 @@ See [Using React without JSX](/docs/react-without-jsx.html) for more information
 
 ### Suspense {#suspense}
 
-Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with `React.lazy`](/docs/code-splitting.html#reactlazy). In the future, it will support other use cases like data fetching.
+Suspense נותן לקומפוננטות “לחכות” למשהו לפני רינדור. היום, Suspense תומך רק במקרה יחיד: [טעינת קומפוננטות בצורה דינמית עם `React.lazy`](/docs/code-splitting.html#reactlazy). בעתיד, זה יתמוך גם במקרים נוספים כמו משיכת נתונים.
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
 
 ### Hooks {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*Hooks* הם תוספת חדשה ל-React 16.8. הם נותנים לך להשתמש ב-state ותכונות אחרות של React מבלי לכתוב מחלקה. ל-Hooks יש [חלק ייעודי בתיעוד](/docs/hooks-intro.html) והפניית API נפרדת.
 
-- [Basic Hooks](/docs/hooks-reference.html#basic-hooks)
+- [Hooks בסיסי](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
   - [`useEffect`](/docs/hooks-reference.html#useeffect)
   - [`useContext`](/docs/hooks-reference.html#usecontext)
-- [Additional Hooks](/docs/hooks-reference.html#additional-hooks)
+- [Hooks נוספים](/docs/hooks-reference.html#additional-hooks)
   - [`useReducer`](/docs/hooks-reference.html#usereducer)
   - [`useCallback`](/docs/hooks-reference.html#usecallback)
   - [`useMemo`](/docs/hooks-reference.html#usememo)
@@ -88,31 +88,31 @@ Suspense lets components "wait" for something before rendering. Today, Suspense 
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+`React.Component` היא המחלקה הבסיסית לקומפוננטות React כאשר הן מוגדרות באמצעות [מחלקות ES6](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
 
 ```javascript
 class Greeting extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>שלום, {this.props.name}</h1>;
   }
 }
 ```
 
-See the [React.Component API Reference](/docs/react-component.html) for a list of methods and properties related to the base `React.Component` class.
+ראה את [הפניית React.Component API](/docs/react-component.html) לרשימה של מתודות ותכונות שקשורות למחלקה הבסיסית `React.Component`.
 
 * * *
 
 ### `React.PureComponent` {#reactpurecomponent}
 
-`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison. 
+`React.PureComponent` דומה ל-[`React.Component`](#reactcomponent). ההבדל בנייהם הוא ש-[`React.Component`](#reactcomponent) לא ממש את [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), אבל `React.PureComponent` ממש זאת עם השוואתם של prop רדוד ו-state.
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+אם הפונקציה `render()`של הקומפוננט React שלכם מרנדרת את אותה תוצאה שנתנה את אותם state ו-props, אתה יכול להשתמש ב-`React.PureComponent` לשיפור ביצועים לאותם מקרים. 
 
-> Note
+> הערה
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> המתודה ה-`shouldComponentUpdate()`של `React.PureComponent` רק משוואה בצורה רדודה את האובייקטים. אם זה מכיל מבנה נתונים מורכב, זה עשוי לייצר תוצאה שגויה עבור הבדלים עמוקים יותר. השתמש ב-`PureComponent` אך ורק מתי שאתה מצפה לקבל props ו-state פשוטים, או השתמש ב-[`forceUpdate()`](/docs/react-component.html#forceupdate) מתי שאתה יודע שמבנה נתונים מורכב השתנה. או, שקול להשתמש ב-[immutable objects](https://facebook.github.io/immutable-js/) כדי לאפשר השוואות מהירות לאובייקטים מקוננים.
 >
-> Furthermore, `React.PureComponent`'s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also "pure".
+> בנוסף לכך, המתודה `shouldComponentUpdate()` של `React.PureComponent` מדלגת על עדכון prop לכל התת-עץ של של הקומפוננטה. וודא שכל הילדים של הקומפוננטה גם “טהורים”.
 
 * * *
 
@@ -124,9 +124,9 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.memo` היא [higher order component](/docs/higher-order-components.html). זה דומה ל-[`React.PureComponent`](#reactpurecomponent) אבל לקומפוננטות מסוג פונקציה במקום מחלקות.
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+אם הקומפוננטת פונקציה שלך מרנדרת את אותה תוצאה שניתנה מאותו props, אתה יכול לעטוף אותה ב-`React.memo` לשיפור ביצועים במקרים מסויימים על ידי תזכורת התוצאה. זה אומר ש-React ידלג רינדור הקומפוננטה, ויעשה שימוש חוזר בתוצאת הרינדור האחרונה.
 
 By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
 
